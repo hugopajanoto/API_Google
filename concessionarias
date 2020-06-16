@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  
+  <style>
+    
+	#map {
+      height:500px;
+      width:100%;
+    }
+		  </style>
+		</head>
+		
+		
+<body>
+
+<div id="">
+
+			
+<form method="post" action="mapa.html">    
+						
+</form>
+</div>
+			
+  <div id="map"></div>
+  <script>
+function initMap(){
+// Map options
+var options = 
+	{
+		zoom:4,
+		center:{lat:-18.0297,lng:-48.8525}
+	}
+// New map
+var map = new google.maps.Map(document.getElementById('map'), options);
+// Array of markers
+var markers =
+[
+{ coords:{lat:-15.5587,lng:-47.3107},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>STRATEL AGRI TRATORES</h3></text>Rodovia BR 020, s/n, Quadra 302 Lote 09,Parque Lago,Formosa,GO<br>(61)3718-1631<br>rafaelbrandt@stratel.com.br<text><br>'
+
+},
+
+{ coords:{lat:-20.5457311,lng:-47.431079},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>ARABICA TRATORES</h3></text>Av. Wilson Sábio de Mello, n. 2120,Distrito Industrial Antônio Della-Torre,Franca,SP<br>(16) 3708-1100<br>contato@arabicatratores.com.br<text><br>'
+
+ },
+
+{ coords:{lat:-20.8999812,lng:-47.0070756},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>ARABICA TRATORES</h3></text>Rua Sebastião Dizaro, 50,Jardim America VII,São Sebastião do Paraíso,MG<br>(35) 3531-0330<br>filial@arabicatratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-17.534846,lng:-39.721442},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>CAMPO FORTE TRATORES</h3></text>Avenida Presidente Getúlio Vargas, 50,Bairro Monte Castelo,Teixeira de Freitas,BA<br>(73) 3011-1100<br>gercino.silva@campofortetratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-30.9635804,lng:-54.6717157},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>CASA DO PRODUTOR</h3></text>Rua Sete de Setembro, 2980,Getulio Vargas,Dom Pedrito,RS<br>(53) 3243-7640<br>casaprod@gmail.com<text><br>'
+
+},
+
+{ coords:{lat:-11.7273814,lng:-49.0763437},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>CERRADÃO</h3></text>Av. Santa Catarina nº 2811 ,Centro,Gurupi,TO<br>(63) 3312-4442<br>wesley@cerradao.com<text><br>'
+
+ },
+
+{ coords:{lat:-20.415992,lng:-54.5776985},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>COMAK</h3></text>Av. Consul Assaf Trad, 4332,Mata do Jacinto,Campo Grande,MS<br>(67) 3211-0070 <br>alvaro@comak.com.br<text><br>'
+
+ },
+
+{ coords:{lat:-24.9696462,lng:-53.4548284},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>DATTA</h3></text>Rua Carlos Gomes, 2345,Jardim Social,Cascavel,PR<br>(45) 3220-0500<br>datta@datta.com.br<text><br>'
+
+},
+
+{ coords:{lat:-22.2564408,lng:-54.8040233},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>DATTA</h3></text>Rua Hayel Bon Faker, nº 270,Jardim Rasslem,Dourados,MS<br>0<br>gerente02@datta.com.br<text><br>'
+
+},
+
+{ coords:{lat:-21.1545509,lng:-48.9823011},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>DIMAS TRATORES</h3></text>Av. Comendador Antonio Stocco, 397,Parque Joaquim Lopes,Catanduva,SP<br>(17) 3523-3030<br>dimas@dimastratores.com.br<text><br>'
+
+ },
+{ coords:{lat:-20.5670514,lng:-48.585383},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>DIMAS TRATORES</h3></text>Av. dos Maçons, 177,Jardim Ramos,Barretos,SP<br>(17) 3323-3802<br>dimas@dimastratores.com.br<text><br>'
+},
+
+{ coords:{lat:-29.7089683,lng:-53.8130402},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>DOSUL</h3></text>Avenida Helvio Basso número 1.273 loja “A”,Nossa Senhora Medianeira,Santa Maria,RS<br>(55) 3213-3400<br>gerencia@dosulsm.com.br<text><br>'
+},
+
+{ coords:{lat:-23.4014,lng:-51.1336},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>ENGEPEÇAS</h3></text>Rodovia Celso Dias (Rodovia PR-445), SN, km 87 L234A1,Parque Industrial,Cambé ,PR<br>(43) 3154-4440<br>garcia@engepecas.com.br<text><br>'
+},
+
+{ coords:{lat:-30.423666,lng:-51.468312},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>GLOBAL MAC</h3></text>BR 116 Km 337 s/número,Bairro Douradilho,Barra do Ribeiro,RS<br>(51) 3482-3027<br>joel.backes@globalmac-inc.com<text><br>'
+},
+
+{ coords:{lat:-28.2743642,lng:-52.4484244},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>GLOBAL MAC</h3></text>Rua Alfredo do Amaral  nº: 77,Integração,Passo Fundo,RS<br>(54) 3311-8365<br>joel.backes@globalmac-inc.com<text><br>'
+},
+
+{ coords:{lat:-31.647746,lng:-52.334777},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>GLOBAL MAC</h3></text>Rua Edmundo da Fontoura Gastal, 3601, BR-116,Bairro Três Vendas,Pelotas,RS<br>(53) 3273-9977<br>joel.backes@globalmac-inc.com<text><br>'
+},
+ 
+{ coords:{lat:-27.422662,lng:-49.59821},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>ITUARA</h3></text>Rua Leonel Thiesen, 487,Centro,Ituporanga,SC<br>(48) 3524-4372<br>0<text><br>'
+},
+
+{ coords:{lat:-22.2926434,lng:-48.576724},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>J. A. MÁQUINAS</h3></text>Av. Deputado Zien Nassif, 1134,1ª Zona Industrial,Jaú,SP<br>(16) 3301-4488<br>adm1.ja@lstractorja.com.br<text><br>'
+
+},
+
+{ coords:{lat:-22.4380982,lng:-46.9809847},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>J. A. MÁQUINAS</h3></text>Rua Benedita Mano Schincariol, 71,Santa Cruz,Mogi Mirim,SP<br>(19) 3804-3962<br>adm.mm@lstractorja.com.br<text><br>'
+ 
+},
+
+{ coords:{lat:-29.6689232,lng:-51.4587632},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>KIM TRATORES</h3></text>Estrada Maurício Cardoso (RS 240), nº 1818,Faxinal,Montenegro,RS<br>(51) 3649-5555<br>lskim@lskim.com.br<text><br>'
+},
+
+{ coords:{lat:-29.7043108,lng:-52.5034653},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>KIM TRATORES</h3></text>Rua Ernesto Wild, 890,Centro,Vera Cruz,RS<br>(51) 3718-4010<br>vendas@lskim.com.br<text><br>'
+
+},
+
+
+{ coords:{lat:-27.1162868,lng:-52.6129399},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>KOREA TRATORES</h3></text>Rua das Araucárias, 15 E,Trevo,Chapecó,SC<br>(49) 3323-7303<br>eraldo@koreatratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-27.7929845,lng:-50.2835759},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>KOREA TRATORES</h3></text>Rodovia BR 282 nº137,Bates,Lages,SC<br>(49) 3224-3115<br>eraldo@koreatratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-20.3021513,lng:-50.5406596},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>KOREA TRATORES</h3></text>Rua Áureo Fernandes Faria 1041,Jales, São Paulo<br>0<br>eraldo@koreatratores.com.br<text><br>'
+},
+
+{ coords:{lat:-22.1531711,lng:-51.3864057},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>LS NOVAURORA</h3></text>Av. João Antonio – Pavao 226, loja 1,Vila Maria,Presidente Prudente,SP<br>(18) 2101-2800<br>gerencia.geral@novauroramaquinas.com.br<text><br>'
+},
+
+{ coords:{lat:-15.6443237,lng:-56.1585077},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>MAQUIPARTS</h3></text>Av. Governador Julio Campos, 3981 - B,Jardim Paula I,Várzea Grande,MT<br>(65) 3684-8080<br>atendimento@maquiparts.com.br<text><br>'
+},
+
+{ coords:{lat:-12.7355385,lng:-60.149787},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>MAQUIPARTS</h3></text>Avenida Celso Mazutti, nº 2615,Bodanese,Vilhena,RO<br>(69) 3322-4005<br>fabio.back@maquiparts.com.br<text><br>'
+},
+
+{ coords:{lat:-10.5257894,lng:-55.2206454},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>MICK</h3></text>Rodovia BR 163, KM 986,Setor Industrial,Terra Nova do Norte,MT<br>(66) 3534-1003<br>eloivo@mickmaquinas.net<text><br>'
+
+},
+
+{ coords:{lat:-18.92454,lng:-47.001358},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>OLIMAQUINAS</h3></text>Rua Sebastião Horácio Teixeira, 2070,Cruzeiro da Serra,Patrocinio,MG<br>(34) 3832-2500<br>olimaquinastratores@olimaquinastratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-18.8970404,lng:-48.2722045},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>OLIMAQUINAS</h3></text>Av. Moacir Lopes de Carvalho, 519,Presidente Roosevelt,Uberlândia,MG<br>(34) 3305-4917<br>olimaquinastratores@olimaquinastratores.com.br<text><br>'
+},
+
+{ coords:{lat:-18.6191891,lng:-46.5059327},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>OLIMAQUINAS</h3></text>Av. Juscelino Kubitschek de Oliveira, 2780,Ipanema,Patos de Minas,MG<br>(34) 3822-7760<br>olimaquinastratores@olimaquinastratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-21.7704442,lng:-50.8703226},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>SOLOMAX</h3></text>Rodovia Comandante João Ribeiro de Barros Km 569 s/nº,,Osvaldo Cruz,SP<br>(18) 3529-9000<br>ailton@solomax.com.br<text><br>'
+
+},
+
+{ coords:{lat:-12.0878351,lng:-45.7773677},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>STRATEL AGRI</h3></text>Rua Laci Marcio Hendges, 403,Jardim Imperial,Luis Eduardo Magalhães,BA<br>(77) 3628-4797<br>comercial@stratel.com.br<text><br>'
+
+},
+
+{ coords:{lat:-21.3717381,lng:-45.4919924},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TERRA CAFÉ</h3></text>Av. Ipiranga, 1966,Santana,Três Pontas,MG<br>(35) 3265-3235<br>terracafe@terracafe.com.br<text><br>'
+
+},
+
+{ coords:{lat:-22.22604,lng:-45.918953},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TERRA CAFÉ</h3></text>Av. Pinto Cobra, 990,Sítio Vargem do Sapucai,Pouso Alegre,MG<br> (35) 3422-7515<br>carlos@terracafe.com.br<text><br>'
+
+},
+
+{ coords:{lat:-1.3805513,lng:-48.3962469},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TERRANEW</h3></text>Rodovia BR 316, KM 05 Nº 357,Águas Lindas,Ananindeua,PA<br>(91) 3237-0899<br>vendas@terranew.com.br<text><br>'
+
+},
+
+{ coords:{lat:-23.1096,lng:-47.7097},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>LASS MAQUINAS - TERRA AZUL</h3></text>Rua Luis Florian, nº 101 - Caixa Postal 40,Distrito Industrial,Tiete,SP<br>(15) 3389-1029<br>juliana@lass.com.br/augusto@lass.com.br<text><br>'
+
+},
+
+{ coords:{lat:-23.2037647,lng:-49.374843},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>LASS MAQUINAS - TERRA AZUL</h3></text>Avenida São Sebastião, n° 381,Jardim Ana Carolina,Piraju,SP<br>(14) 3351-6046<br>augusto@terrazultratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-23.5387833,lng:-46.2299151},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRATELES</h3></text>Av. Gaspar Vaz, 126,Vila Paulista,Mogi das Cruzes,SP<br>(11) 4312-5775<br>contato@trateles.com.br<text><br>'
+
+},
+
+{ coords:{lat:-12.2654192,lng:-38.9441741},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>FEIRA LS TRATORES</h3></text>Av. Presidente Dutra, 2548,Muchila,Feira de Santana,BA<br>(75) 3622-1590<br>lstratorforte@gmail.com<text><br>'
+
+},
+
+{ coords:{lat:-29.12696,lng:-51.137435},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>D.C. TRACTOR</h3></text>Rod. Rota do Sol,s/n KM 153,São Ciro,Caxias do Sul,RS<br>(54) 3019-9129<br>joel.backes@globalmac-inc.com<text><br>'
+
+},
+
+{ coords:{lat:-25.0629655,lng:-50.1789671},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRATORMIX</h3></text>Rua Hans Mol nº 12,Boa Vista,Ponta Grossa,PR<br>(42) 3227-3000 <br>jorge@tratormixsa.com.br<text><br>'
+
+},
+
+{ coords:{lat:-25.3505,lng:-51.4573},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRATORMIX</h3></text>Rua Alzino Carazzai, esquina com Rua Jorge Haag s/nº,Primavera,Guarapuava,PR<br>(42) 3624-0816<br>jorge@tratormixsa.com.br<text><br>'
+
+},
+
+{ coords:{lat:-19.7548727,lng:-45.2595424},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRIAMA</h3></text>Rua do Rosário, 1599,São José,Bom Despacho,MG<br>(37) 3521-9500<br>francisco@triama.com.br<text><br>'
+
+},
+
+{ coords:{lat:-19.8760778,lng:-44.6064417},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRIAMA</h3></text>Avenida Professor Mello Cançado nº 2112,Belvedere,Pará de Minas,MG<br>(37 )3237-0055<br>joao.pereira@triama.com.br<text><br>'
+
+},
+
+{ coords:{lat:-19.2186022,lng:-44.9981},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRIAMA<h3></h6>Rodovia MG-164 nº 775,São José,Pompeu,MG</h6>'
+},
+
+{ coords:{lat:-18.767663,lng:-44.425039},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRIAMA</h3></text>Rodovia MG-164 nº 775,São José,Pompeu,MG<br>(37) 3523-3003<br>franklin@triama.com.br<text><br>'
+
+},
+
+{ coords:{lat:-14.8733,lng:-40.8521},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRIAMA</h3></text>Avenida Presidente Dutra nº 310,Brasil,Vitória da Conquista,BA<br>(77) 3422-4343<br>rone@triama.com.br<text><br>'
+
+},
+
+{ coords:{lat:-14.2233965,lng:-42.7771786},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>TRIAMA</h3></text>Avenida Barão do Rio Branco nº 292,Centro,Guanambi,BA<br>(77) 3452-2626<br>thaylson@triama.com.br<text><br>'
+
+},
+
+{ coords:{lat:-21.301862,lng:-46.7233919},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>ULTRANOVA TRATORES</h3></text>Rua José Aniceto Ferreira, número 689,Novo Horizonte,Guaxupé,MG<br>(35) 3551-7644<br>neto@ultranovatratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-21.6076687,lng:-46.9003163},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+ content:'<h3>ULTRANOVA TRATORES</h3></text>Avenida Maria Aparecida Salgado Braguetta, 3169,Vila Brasil,São José do Rio Pardo,SP<br>(19) 3681-2429<br>neto@ultranovatratores.com.br<text><br>'
+
+},
+
+{ coords:{lat:-26.1381631,lng:-49.812708},
+iconImage:'http:\/\/novotempoconsorcio.com.br\/assets\/img\/icons\/maps.png',
+content:'<h3>YAMAGRIL COMÉRCIO DE MÁQUINAS</h3></text>Avenida Presidente Nereu Ramos, 1750,Centro,Mafra,SC<br>(47) 3643-0178<br>Ls.yamagriltitular@schadeck.com.br<text><br>'
+
+},
+      ];
+
+      //* Loop through markers
+ for(var i = 0;i < markers.length;i++)
+	{
+        // Add marker
+addMarker(markers[i]);
+    }
+
+      // Add Marker Function
+function addMarker(props){
+var marker = new google.maps.Marker
+	({
+position:props.coords,
+map:map,
+//icon:props.iconImage
+    });
+
+// Check for customicon
+    if(props.iconImage)
+	{
+// Set icon image
+ marker.setIcon(props.iconImage);
+    }
+
+// Check content
+    if(props.content){
+var infoWindow = new google.maps.InfoWindow
+	({
+     content:props.content
+    });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+			pause()
+          });
+        }
+      }
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX7qIv8ZhLdCHLJSwlrE1tD-xiLtNNIFU&callback=initMap">
+    	</script>		  
+</body>
+</html>
